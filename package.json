@@ -2,6 +2,9 @@
   "name": "controle_de_academia",
   "version": "1.0.0",
   "main": "server.js",
+  "nodemonConfig": {
+    "ext": "js, njk, css"
+  },
   "scripts": {
     "start": "npm-run-all -p nodemon browsersync",
     "nodemon": "nodemon server.js",
