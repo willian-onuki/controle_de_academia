@@ -1,0 +1,23 @@
+<html>
+    <head>
+        {% block head %}
+
+            <title>GYM Manager</title>
+
+        {% endblock %}
+        
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="link">
+                <a href="/" class="active">adfafInstructors</a> <!--Antes era index.html, mas como no servidor está configurado como / -->
+                <a href="/members">Members</a> <!--Sem o .html porque já está configurado desse jeito no servidor-->
+            </div>
+        </header>
+                
+        {% block content %}{% endblock %} <!--Substitui o conteúdo de uma maneira dinamica com Nunjucks-->
+        <!--irá pegar todo o conteúdo que esta no about.html-->
+
+    </body>
+</html>
