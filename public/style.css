@@ -72,7 +72,7 @@ header {
 /* ===CARD=== */
 .card {
     background: white;
-    height: 400px;
+    min-height: 400px;
     width: 800px;
 
     /* Espaçamento ao centro*/
@@ -105,4 +105,41 @@ header {
         /* fim */
         opacity: 1;
     }
+}
+
+/* ===Details=== */
+.details {
+    padding: 32px;
+}
+
+.details .item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 16px 0;
+}
+
+.details .item:last-child /* Representa o último elemento */{
+    border: none;
+}
+
+.details h3,
+.details .item div:nth-child(1) {
+    /* Pega só a 1º div do ITEM */
+    font-size: 14px;
+    line-height: 24px;
+    color: #777;
+    letter-spacing: 0.7px; /* Espaçamento entre as letras */
+    font-weight: normal;
+}
+
+.details .item div:nth-child(2) {
+    /* Pega só a 2º div do ITEM */
+    color: #555;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.details h3 {
+    text-transform: uppercase; /* Deixa em caixa alta */
+    font-weight: bold;
+    color: var(--primary-color);
 }
