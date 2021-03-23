@@ -160,3 +160,39 @@ header {
     text-transform: uppercase;
     font-size: 12px;
 }   
+
+/* ===FORM=== */
+
+input {
+    width: 100%;
+    outline: none; /* Tira aquela borda do input apos o click */
+    color: #555;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input[type = "radio"] {
+    /* seleciona só os input com type radio */
+    width: initial; /* deixa como esta no inicio, sem sofrer alterações feitas no input da linha 166 */
+    margin-right: 4px;
+}
+
+input::placeholder {
+    /* altera somente os placeholder */
+    font-size: 16px;
+    font-weight: normal;
+    color: #555;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+button[type = "submit"] {
+    /* seleciona só os button com type submit */
+    padding: 8px 32px;
+    width: 100%;
+    background: var(--primary-color);
+    font-size: 16px;
+    color: white;
+    border-radius: 4px;
+    margin-top: 32px;
+}

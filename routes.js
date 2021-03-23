@@ -9,8 +9,16 @@ routes.get('/instructors', function(req,res) {
     return res.render("instructors/index") /* Quando declara o nome de um arquivo como (nome)/(nome.terminal) ele já cria uma pasta separada para a página, e para renderizar a pág. precisa colocar o nome da pasta e da pag */
 })
 
+routes.get('/instructors/create', function(req,res) {
+    return res.render("instructors/create") 
+})
+
+routes.post("/instructors", function(req,res) {
+    return res.send("RECEBIDO")
+})
+
 routes.get('/members', function(req,res) {
-    return res.send("member")
+    return res.send("members")
 })
 
 module.exports = routes
