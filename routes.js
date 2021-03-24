@@ -14,7 +14,9 @@ routes.get('/instructors/create', function(req,res) {
 })
 
 routes.post("/instructors", function(req,res) {
-    return res.send("RECEBIDO")
+    /* irá pegar os dados do formulário */
+    /* precisa configurar o express */
+    return res.send(req.body) /* Usa req.body para quando for POST, e req.query quando for GET */
 })
 
 routes.get('/members', function(req,res) {
