@@ -7,7 +7,7 @@ const routes = require('./routes')
 
 
 const server = express() /*O server criado ira executar o express, como o require trouxe o express para a variavel express, tornou-se uma funcao. Agr podemos chamar essa funcao para dentro do servidor*/
-/* ---CONFIGURANDO O BACK-END--- */
+/* ---CONFIGURANDO O BACK END--- */
 server.use(express.urlencoded({ extended: true })) /* Faz funcionar o req.body */
 /*---CONFIGURANDO O ESTILO--- */
 server.use(express.static('public')) /*Irá observar a pasta PUBLIC para servir os arquivos estáticos, */
