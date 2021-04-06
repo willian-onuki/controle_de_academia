@@ -1,3 +1,5 @@
+const fs = require('fs') /*fs = file system, trabalha com arquivo do sistema*/
+
 // Create
 exports.post = function(req, res) {
     //Irá exportar a function instructors 
@@ -18,6 +20,12 @@ exports.post = function(req, res) {
             return res.send("Please, fill all fields!")
     }
 
- 
-    return res.send(req.body) /* Usa req.body para quando for POST, e req.query quando for GET */
+    fs.writeFile("data.json"/*Já vai na raiz salvar esse arquivo*/, /*objeto notação JSON*/JSON.stringify(req.body), /*CALLBACK FUNCTiON*/ function(err){
+        /* callback function faz não bloquear o aplicativo, pode acontecer de bugar e demorar pra escrever o arquivo, e consequentemente cair o sistema */
+        if (err) return res.send("Write file error!")
+
+        return res.redirect('/instructors')
+    })
+
+    // return res.send(req.body) /* Usa req.body para quando for POST, e req.query quando for GET */
 } 
