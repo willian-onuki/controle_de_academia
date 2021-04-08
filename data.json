@@ -1,1 +1,18 @@
-{"avatar_url":"https://google.com","Name":"willian","birth":"1818-12-18","gender":"M","services":"musculação, crossfit"}
+{
+    "instructors": [
+        {
+            "avatar_url": "https://google.com",
+            "Name": "willian",
+            "birth": "2000-12-18",
+            "gender": "M",
+            "services": "musculação, crossfit"
+        },
+        {
+            "avatar_url": "https://google.com",
+            "Name": "willian2",
+            "birth": "1818-12-18",
+            "gender": "M",
+            "services": "musculação, crossfit"
+        }
+    ]
+}

@@ -1,4 +1,5 @@
 const fs = require('fs') /*fs = file system, trabalha com arquivo do sistema*/
+const data = require("./data.json")
 
 // Create
 exports.post = function(req, res) {
@@ -20,7 +21,10 @@ exports.post = function(req, res) {
             return res.send("Please, fill all fields!")
     }
 
-    fs.writeFile("data.json"/*Já vai na raiz salvar esse arquivo*/, /*objeto notação JSON*/JSON.stringify(req.body), /*CALLBACK FUNCTiON*/ function(err){
+    data.instructors.push(req.body) /* a function push vai adicionar o req.body no array data.json */
+
+    /*CALLBACK FUNCTiON*/ 
+    fs.writeFile("data.json"/*Já vai na raiz salvar esse arquivo*/, /*objeto notação JSON*/JSON.stringify(data, null, 4/* Tipo de espaçamento para a identação no data.json */), function(err){
         /* callback function faz não bloquear o aplicativo, pode acontecer de bugar e demorar pra escrever o arquivo, e consequentemente cair o sistema */
         if (err) return res.send("Write file error!")
 
