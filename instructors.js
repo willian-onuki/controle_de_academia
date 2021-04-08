@@ -1,4 +1,5 @@
 const fs = require('fs') /*fs = file system, trabalha com arquivo do sistema*/
+const { url } = require('inspector')
 const data = require('./data.json')
 
 // Create
@@ -21,10 +22,22 @@ exports.post = function(req, res) {
             return res.send("Please, fill all fields!")
     }
 
-    req.body.birth = Date.parse(req.body.birth) /* Transforma string para data em milissegundos */
-    req.body.created_at = Date.now() /* Cria a data de hoje em milissegundos*/
+    /* Deixando os dados mais organizados */
+    let {avatar_url, birth, name, services, gender} = req.body /* desestruturação para pode passar somente os dados necessários */
 
-    data.instructors.push(req.body) /* a function push vai adicionar o req.body no array data.json */
+    birth = Date.parse(birth) /* Transforma string para data em milissegundos */
+    const created_at = Date.now() /* Cria a data de hoje em milissegundos*/
+    const id = Number(data.instructors.length/* Pega o tamanho do array */ + 1)
+
+    data.instructors.push({
+        id,
+        avatar_url, 
+        name,
+        birth,  
+        gender,
+        services, 
+        created_at       
+    }) /* a function push vai adicionar o req.body no array data.json */
 
     /*CALLBACK FUNCTiON*/ 
     fs.writeFile("data.json"/*Já vai na raiz salvar esse arquivo*/, /*objeto notação JSON*/JSON.stringify(data, null, 4/* Tipo de espaçamento para a identação no data.json */), function(err){
