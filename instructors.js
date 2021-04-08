@@ -1,5 +1,5 @@
 const fs = require('fs') /*fs = file system, trabalha com arquivo do sistema*/
-const data = require("./data.json")
+const data = require('./data.json')
 
 // Create
 exports.post = function(req, res) {
@@ -20,6 +20,9 @@ exports.post = function(req, res) {
         if (req.body[key] == "")
             return res.send("Please, fill all fields!")
     }
+
+    req.body.birth = Date.parse(req.body.birth) /* Transforma string para data em milissegundos */
+    req.body.created_at = Date.now() /* Cria a data de hoje em milissegundos*/
 
     data.instructors.push(req.body) /* a function push vai adicionar o req.body no array data.json */
 
