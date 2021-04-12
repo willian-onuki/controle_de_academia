@@ -2,7 +2,24 @@ const fs = require('fs') /*fs = file system, trabalha com arquivo do sistema*/
 const { url } = require('inspector')
 const data = require('./data.json')
 
-// Create
+// ===SHOW===
+// Pega os dados do data.json e manda para o front
+exports.show = function (req,res) {
+    //req.query-> pega id como essa opção : /instructors?id=1.
+    //req.params -> manda direto pra url : /instructors/1
+    const { id } = req.params
+
+    const foundInstructor = data.instructors.find(function (instructor) {
+        return instructor.id == id
+    })
+
+    if (!foundInstructor) return res.send("Instructor not found!")
+
+    return res.send(foundInstructor)
+}
+
+
+// ===CREATE===
 exports.post = function(req, res) {
     //Irá exportar a function instructors 
 
