@@ -15,7 +15,7 @@ exports.show = function (req,res) {
 
     if (!foundInstructor) return res.send("Instructor not found!")
 
-    return res.send(foundInstructor)
+    return res.render("instructors/show", {instructor : foundInstructor} /* Manda os dados do instrutor */)
 }
 
 
@@ -61,7 +61,7 @@ exports.post = function(req, res) {
         /* callback function faz não bloquear o aplicativo, pode acontecer de bugar e demorar pra escrever o arquivo, e consequentemente cair o sistema */
         if (err) return res.send("Write file error!")
 
-        return res.redirect('/instructors')
+        return res.render('/instructors')
     })
 
     // return res.send(req.body) /* Usa req.body para quando for POST, e req.query quando for GET */

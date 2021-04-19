@@ -11,7 +11,9 @@ const server = express() /*O server criado ira executar o express, como o requir
 server.use(express.urlencoded({ extended: true })) /* Faz funcionar o req.body */
 /*---CONFIGURANDO O ESTILO--- */
 server.use(express.static('public')) /*Irá observar a pasta PUBLIC para servir os arquivos estáticos, */
+
 server.use(routes)
+
 /*--CONFIGURANDO TEMPLATE ENGINE-- */
 server.set("view engine", "njk") /*irá usar tudo o que for HTML(era antes do NJK, mas agora irá ler todos os arquivos NJK) */
 
