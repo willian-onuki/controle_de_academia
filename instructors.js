@@ -16,11 +16,10 @@ exports.show = function (req,res) {
     if (!foundInstructor) return res.send("Instructor not found!")
 
     const instructor = {
-        ...foundInstructor, /* Irá pegar todo objeto do foundInstructor e espalhar  */        
-        age: "",
-        gender: "",        /* Apos a vírgula, do foundInstructor, terão variáveis repetidas, mas irão sobrescrever  */
-        services: "",
-        created_at: ""
+        ...foundInstructor/*Spread Operator*/,    /* Nesse caso pega todo objeto do foundInstructor e espalha  */
+        age: "",          /* Apos a vírgula, do foundInstructor, terão variáveis repetidas, mas irão sobrescrever  */
+        services: foundInstructor.services.split(","), /* split pega um obejeto e transforma num array, nesse caso a vírgula quebra a string */
+        created_at: ""        
     }
 
     return res.render("instructors/show", { instructor } /* Manda os dados do instrutor */)

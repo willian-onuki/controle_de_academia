@@ -4,7 +4,7 @@
             "id": 1,
             "avatar_url": "https://google.com",
             "birth": -4766342400000,
-            "gender": "M",
+            "gender": "F",
             "services": "musculação, crossfit",
             "created_at": 1617919389734
         },
@@ -31,7 +31,7 @@
             "avatar_url": "https://google.com",
             "name": "willian3",
             "birth": -4766342400000,
-            "gender": "M",
+            "gender": "F",
             "services": "musculação, crossfit",
             "created_at": 1617919506624
         }
