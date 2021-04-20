@@ -15,7 +15,15 @@ exports.show = function (req,res) {
 
     if (!foundInstructor) return res.send("Instructor not found!")
 
-    return res.render("instructors/show", {instructor : foundInstructor} /* Manda os dados do instrutor */)
+    const instructor = {
+        ...foundInstructor, /* Irá pegar todo objeto do foundInstructor e espalhar  */        
+        age: "",
+        gender: "",        /* Apos a vírgula, do foundInstructor, terão variáveis repetidas, mas irão sobrescrever  */
+        services: "",
+        created_at: ""
+    }
+
+    return res.render("instructors/show", { instructor } /* Manda os dados do instrutor */)
 }
 
 
